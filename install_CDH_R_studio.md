@@ -304,3 +304,46 @@ $ mkdir /var/lib/cloudera-scm-agent
 $ mkdir /opt/cm-5.11.0/run/cloudera-scm-agent
 </pre></code>
 6.	请根据上面的步骤对所有从节点进行操作。
+## 启动Cloudera Manager服务
+1.	在主节点中启动Cloudera Manager Server服务。
+<pre><code>
+$ /opt/cm-5.11.0/etc/init.d/cloudera-scm-server start
+</pre></code>
+2.	在所有从节点中启动Cloudera Manager Agent服务。
+<pre><code>
+$ /opt/cm-5.11.0/etc/init.d/cloudera-scm-agent start
+</pre></code>
+3.	启动完成后，在浏览器中输入“http://主节点IP地址:7180”，登录Cloudera Manager <br/>
+用户名、密码：admin
+# Install R-base-server
+<pre><code>
+$ sudo yum install epel-release
+$ sudo yum update
+$ sudo yum install R
+</pre></code>
+# Install R-studio-server
+<pre><code>
+$ wget https://download2.rstudio.org/rstudio-server-rhel-1.0.44-x86_64.rpm
+$ sudo yum install --nogpgcheck rstudio-server-rhel-0.99.903-x86_64.rpm
+
+$ sudo rstudio-server stop 
+$ sudo rstudio-server start
+$ sudo rstudio-server restart
+
+$ sudo rstudio-server active-sessions 
+$ sudo rstudio-server suspend-session <pid>
+$ sudo rstudio-server suspend-all
+
+$ sudo rstudio-server offline # 会给当前连接用户下线提示
+$ sudo rstudio-server online
+</pre></code>
+
+# install shiny-server
+<pre><code>
+$ wget https://download3.rstudio.org/centos5.9/x86_64/shiny-server-1.4.6.809-rh5-x86_64.rpm
+$ sudo yum install --nogpgcheck shiny-server-1.4.6.809-rh5-x86_64.rpm
+
+$ sudo start shiny-server
+$ sudo stop shiny-server
+$ sudo restart shiny-server # restart模式不会读取/etc/init/shiny-server.conf中的改动
+</pre></code>
