@@ -260,7 +260,8 @@ $ cd /opt/cm-5.11.0/share/cmf/schema/
 $ ./scm_prepare_database.sh mysql -hdsgcm(数据库地址) -udsg(数据库用户) -pdsg(数据库密码) --scm-host dsgcm(cmserver服务器) cdhdb(数据库名) scm scm
 ./scm_prepare_database.sh mysql -hlocalhost -udsg -pdsg --scm-host localhost cdhdb scm scm
 </pre></code>
-*“cmserver用户名”输入Cloudera Manager Server服务器名或IP地址。*
+*“cmserver用户名”输入Cloudera Manager Server服务器名或IP地址。* <br />
+
 6.	在/var/lib/中创建cloudera-scm-server目录，并改变该目录的拥有者改为cloudera-scm。
 <pre><code>
 $ mkdir /var/lib/cloudera-scm-server
@@ -313,8 +314,8 @@ $ /opt/cm-5.11.0/etc/init.d/cloudera-scm-server start
 <pre><code>
 $ /opt/cm-5.11.0/etc/init.d/cloudera-scm-agent start
 </pre></code>
-3.	启动完成后，在浏览器中输入“http://主节点IP地址:7180”，登录Cloudera Manager <br/>
-用户名、密码：admin
+3.	启动完成后，在浏览器中输入*http://主节点IP地址:7180*，登录Cloudera Manager <br/>
+**用户名、密码：admin**
 # Install R-base-server
 <pre><code>
 $ sudo yum install epel-release
