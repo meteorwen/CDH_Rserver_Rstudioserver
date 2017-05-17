@@ -232,9 +232,11 @@ The key's randomart image is:
 	mysql> grant all on rman.* to 'dsg'@'%' identified by 'dsg' with grant option;
 	mysql> flush privileges;
 </pre></code>
+7.	zookeeper 需要装最少3太以上机器；SecondaryNameNode 需要安装到第二台机器上面 
+
 ## 7、安装依赖的第三方包
 <pre><code>
-	yum install chkconfig python bind-utils psmisc libxslt zlib sqlite cyrus-sasl-plain cyrus-sasl-gssapi fuse fuse-libs redhat-lsb –y
+	yum install ant asciidoc cyrus-sasl-devel cyrus-sasl-gssapi cyrus-sasl-plain gcc gcc-c++ krb5-devel libffi-devel libtidy libxml2-devel libxslt-devel make mysql mysql-devel openldap-devel python-devel sqlite-devel openssl-devel gmp-devel -y
 </pre></code>
 
 # 安装CM 
